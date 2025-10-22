@@ -1,0 +1,317 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Setiap halaman */
+.page {
+    display: none;
+    min-height: 100vh;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ===== HEADER ===== */
+
+.header {
+    background-color: #0066cc;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: flex-start; /* biar logo dan teks nempel kiri */
+    align-items: center;
+    color: white;
+    position: relative;
+    z-index: 10;
+    gap: 10px; 
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.header-right h1 {
+    font-size: 22px;
+    margin: 0;
+}
+
+/* Logo sekolah */
+.logo {
+    height: 50px;
+    width: auto;
+    border-radius: 10px;
+}
+
+/* Teks kanan header */
+.header-right h1 {
+    margin: 0;
+    font-size: 24px;
+    text-align: right;
+}
+
+/* ===== BACKGROUND ===== */
+.background {
+    position: relative;
+    background-image: url("Back Ground.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* hitam transparan */
+    backdrop-filter: blur(2px); /* efek blur lembut */
+    z-index: 0;
+}
+
+.background > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== LOGIN BOX ===== */
+.login-box {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-box h2 {
+    color: #1560BD;
+    margin-bottom: 15px;
+}
+
+.login-box button {
+    padding: 10px 25px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login-box button:hover {
+    background-color: #0056b3;
+}
+
+/* ===== LOGIN OPTIONS ===== */
+.login-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+}
+
+.login-options button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login-options button:hover {
+    background-color: #1e7e34;
+}
+
+/* ===== FORM BOX ===== */
+.form-box {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-box h2 {
+    color: #1560BD;
+}
+
+.form-box input,
+.form-box select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-box button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+.form-box button:hover {
+    background-color: #0056b3;
+}
+
+.form-box button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ===== TOMBOL KEHADIRAN ===== */
+.kehadiran-btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #1560BD;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.kehadiran-btn:hover {
+    background-color: #0d47a1;
+}
+
+/* ===== TABEL ===== */
+.table-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* ===== NOTIFIKASI ===== */
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #28a745;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    z-index: 1000;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: #1560BD;
+    color: #F0F3FA;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+/* ===== FIX LAYER LOGIN BOX ===== */
+.background {
+    position: relative;
+    overflow: hidden; /* biar background nggak ganggu klik */
+}
+
+.background::before {
+    pointer-events: none; /* penting! biar blur nggak halangi klik */
+}
+
+.login-box {
+    position: relative;
+    z-index: 5; /* pastikan kotak login di atas background */
+}
+
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-right h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .logo {
+        height: 40px;
+        margin-bottom: 5px;
+    }
+
+    .login-options {
+        flex-direction: column;
+    }
+
+    .form-box {
+        margin: 20px;
+    }
+}
+/* ===== FINAL FIX AGAR LOGIN BOX BISA DIKLIK ===== */
+.background {
+    position: relative;
+}
+
+.background::before {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    z-index: 0;
+    pointer-events: none !important; /* ini kuncinya */
+}
+
+.background > * {
+    position: relative;
+    z-index: 10 !important; /* pastikan login box di atas blur */
+}
+
+.login-box button {
+    position: relative;
+    z-index: 20 !important;
+    pointer-events: auto !important; /* biar tombol klik aktif */
+}

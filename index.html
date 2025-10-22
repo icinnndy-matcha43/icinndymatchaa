@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absensi Sekolah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Halaman Home -->
+    <div id="home" class="page active">
+        <header class="header">
+            <div class="header-left">
+                <img src="logo.png" alt="Logo Sekolah" class="logo">
+            </div>
+            <div class="header-right">
+                <h1>SMKN 1 NGANJUK</h1>
+            </div>
+        </header>
+
+        <!-- Background -->
+        <div class="background">
+            <div class="login-box">
+                <h2>Selamat Datang di Sistem Absensi</h2>
+                <button id="login-btn">Login</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>@smkn1nganjuk.2025</p>
+        </footer>
+    </div>
+
+    <!-- Halaman Login -->
+    <div id="login" class="page">
+        <header class="header">
+            <div class="header-left">
+                <img src="logo.png" alt="Logo Sekolah" class="logo">
+            </div>
+            <div class="header-right">
+                <h1>SMKN 1 Nganjuk</h1>
+            </div>
+        </header>
+
+        <div class="login-options">
+            <button id="siswa-btn">Login sebagai Siswa</button>
+            <button id="guru-btn">Login sebagai Guru BK</button>
+        </div>
+
+        <footer class="footer">
+            <p>@smkn1nganjuk.2025</p>
+        </footer>
+    </div>
+
+    <!-- Halaman Identitas Siswa -->
+    <div id="siswa-identitas" class="page">
+        <header class="header">
+            <div class="header-left">
+                <img src="logo.png" alt="Logo Sekolah" class="logo">
+            </div>
+            <div class="header-right">
+                <h1>SMKN 1 Nganjuk</h1>
+            </div>
+        </header>
+
+        <div class="form-box">
+            <h2>Identitas Siswa</h2>
+            <input type="text" id="nama" placeholder="Nama Lengkap (Huruf Depan Kapital)">
+            <input type="text" id="kelas" placeholder="Kelas (Capslock, e.g., XII TKJ 1)">
+            <select id="nomor-absen">
+                <option value="">Pilih Nomor Absen</option>
+                <script>
+                    for (let i = 1; i <= 40; i++) {
+                        document.write(`<option value="${i}">${i}</option>`);
+                    }
+                </script>
+            </select>
+            <button id="selanjutnya-btn" disabled>Selanjutnya</button>
+        </div>
+
+        <footer class="footer">
+            <p>@smkn1nganjuk.2025</p>
+        </footer>
+    </div>
+
+    <!-- Halaman Keterangan Kehadiran Siswa -->
+    <div id="siswa-kehadiran" class="page">
+        <header class="header">
+            <div class="header-left">
+                <img src="logo.png" alt="Logo Sekolah" class="logo">
+            </div>
+            <div class="header-right">
+                <h1>SMKN 1 Nganjuk</h1>
+            </div>
+        </header>
+
+        <div class="form-box">
+            <h2>Keterangan Kehadiran</h2>
+            <button class="kehadiran-btn" data-status="Hadir">Hadir</button>
+            <button class="kehadiran-btn" data-status="Sakit">Sakit</button>
+            <button class="kehadiran-btn" data-status="Izin">Izin</button>
+            <button class="kehadiran-btn" data-status="Dispensasi">Dispensasi</button>
+        </div>
+
+        <footer class="footer">
+            <p>@smkn1nganjuk.2025</p>
+        </footer>
+    </div>
+
+    <!-- Halaman Guru BK -->
+    <div id="guru-login" class="page">
+        <header class="header">
+            <div class="header-left">
+                <img src="logo.png" alt="Logo Sekolah" class="logo">
+            </div>
+            <div class="header-right">
+                <h1>SMKN 1 Nganjuk</h1>
+            </div>
+        </header>
+
+        <div class="form-box">
+            <h2>Login Guru BK</h2>
+            <input type="text" id="username" placeholder="Username (Nama Guru, e.g., TRIANA, S.Pd.)">
+            <input type="password" id="password" placeholder="Password (Kelas, e.g., XII TKJ 1)">
+            <button id="login-guru-btn">Login</button>
+        </div>
+
+        <footer class="footer">
+            <p>@smkn1nganjuk.2025</p>
+        </footer>
+    </div>
+
+    <!-- Halaman Tabel Absensi Guru BK -->
+    <div id="guru-tabel" class="page">
+        <header class="header">
+            <div class="header-left">
+                <img src="logo.png" alt="Logo Sekolah" class="logo">
+            </div>
+            <div class="header-right">
+                <h1>SMKN 1 Nganjuk</h1>
+            </div>
+        </header>
+
+        <div class="table-container">
+            <h2>Data Absensi Kelas: <span id="kelas-tabel"></span></h2>
+            <table id="absensi-table">
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Kelas</th>
+                        <th>Nomor Absen</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Data akan diisi oleh JS -->
+                </tbody>
+            </table>
+            <button id="kembali-btn">Kembali</button>
+        </div>
+
+        <footer class="footer">
+            <p>@smkn1nganjuk.2025</p>
+        </footer>
+    </div>
+
+    <!-- Notifikasi -->
+    <div id="notification" class="notification">
+        <p id="notif-text"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
